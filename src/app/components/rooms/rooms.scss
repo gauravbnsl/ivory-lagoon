@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  padding: 5rem 0;
+  background-color: white;
+}
+
+:host ::ng-deep .p-card {
+//   max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+img {
+  margin-bottom: 1rem;
+  object-fit: cover;
+}

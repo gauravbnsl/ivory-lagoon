@@ -1,0 +1,13 @@
+<p-carousel [value]="rooms" [numVisible]="1">
+  <ng-template pTemplate="item" let-room>
+    <p-card [header]="room.name">
+      <img
+        [src]="room.image"
+        width="100%"
+        class="animate-on-scroll"
+        appScrollAnimate
+      />
+      <p>{{ room.description }}</p>
+    </p-card>
+  </ng-template>
+</p-carousel>
