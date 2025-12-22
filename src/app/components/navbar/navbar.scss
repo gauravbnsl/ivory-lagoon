@@ -1,6 +1,19 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  display: block;
+}
+
 :host ::ng-deep .p-menubar {
-  background: transparent;
+  background: rgba(255,255,255,0.86);
+  color: #111111;
   border: none;
+  box-shadow: 0 1px 6px rgba(16, 24, 40, 0.06);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   padding: 0 3rem;
 }
 
@@ -15,3 +28,5 @@ strong {
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
 }
+
+:host { margin: 0; }
