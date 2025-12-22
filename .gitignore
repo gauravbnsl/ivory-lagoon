@@ -7,7 +7,8 @@
 /out-tsc/
 
 # Angular cache
-/.angular/cache/
+/.angular/
+*.tsbuildinfo
 
 # Environment files
 *.env

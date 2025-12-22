@@ -1,0 +1,46 @@
+<svg
+  viewBox="90 70 420 160"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="xMidYMid meet"
+>
+  <defs>
+    <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E6C27A"/>
+      <stop offset="100%" stop-color="#B89A5A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Crown-like arc -->
+  <path
+    d="M230 110 Q300 80 370 110"
+    fill="none"
+    stroke="url(#goldGradient)"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+
+  <!-- Resort Name -->
+  <text
+    x="300"
+    y="162"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="42"
+    font-weight="700"
+    letter-spacing="2.5"
+    fill="#2F3E3A">
+    IVORY LAGOON
+  </text>
+
+  <!-- Tagline -->
+  <text
+    x="300"
+    y="198"
+    text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="12"
+    letter-spacing="3.5"
+    fill="#7A7A7A">
+    LUXURY JUNGLE RETREAT
+  </text>
+</svg>
