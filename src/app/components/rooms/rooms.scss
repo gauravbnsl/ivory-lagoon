@@ -1,16 +1,120 @@
-:host {
-  display: block;
-  padding: 5rem 0;
-  background-color: white;
-}
-
-:host ::ng-deep .p-card {
-//   max-width: 600px;
-  margin: auto;
+.rooms-container {
+  padding: 100px 5%;
+  background: #fdfdfb;
   text-align: center;
 }
 
-img {
-  margin-bottom: 1rem;
-  object-fit: cover;
+/* Simple Fade/Up Animation Logic */
+.hero-section,
+.room-item {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  &.p-animateonscroll-enter {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:host ::ng-deep {
+  .fade-in-up {
+    animation: fadeInUp 1s ease-out forwards !important;
+  }
+
+  /* p-card Customization */
+  .p-card {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background: white;
+    height: 100%;
+
+    .p-card-body {
+      padding: 2.5rem !important;
+      text-align: left !important;
+    }
+
+    .p-card-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
+      color: #1a1a1a;
+    }
+
+    .p-card-subtitle {
+      color: #6b8e23;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .p-card-content {
+      padding: 0;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .p-button {
+    width: 100% !important;
+  }
+}
+
+.section-header {
+  max-width: 750px;
+  margin: 0 auto 70px;
+  .gold-tag {
+    color: #c5a059;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; // Enforce two columns
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-image-wrapper {
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 992px) {
+  .room-grid {
+    grid-template-columns: 1fr; // Stack on mobile
+  }
+}
+
+.section-header > h1:nth-child(2) {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  margin: 20px 0;
+  color: #1a1a1a;
+  line-height: 1.1;
 }

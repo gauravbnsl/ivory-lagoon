@@ -1,21 +1,40 @@
+@import "tailwindcss";
+@plugin "tailwindcss-primeui";
+/* global styles.scss */
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+
+/* Ensure Tailwind and PrimeNG styles are layered correctly */
+@layer tailwind-base, primeng, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
 :root {
-  --luxury-primary: #7a2e2e;   // deep wine red
+  --luxury-primary: #7a2e2e;
   --luxury-dark: #1f1f1f;
   --luxury-muted: #6b6b6b;
   --luxury-bg: #faf8f6;
-  --luxury-accent: #c9a14a;   // gold accent
+  --luxury-accent: #c9a14a;
   --navbar-height: 80px; /* height used by the navbar */
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--luxury-dark);
   background-color: var(--luxury-bg);
   margin: 0;
 }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -29,4 +48,8 @@ h1, h2, h3 {
 .animate-on-scroll.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+.p-menubar-end {
+  margin-left: auto !important;
 }

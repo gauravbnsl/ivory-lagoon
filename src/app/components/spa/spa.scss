@@ -1,1 +1,147 @@
-section#spa { padding: 4rem 2rem; }
+/* 1. SECTION CONTAINER */
+.wellness-container {
+  padding: 100px 5%;
+  background: #fdfdfb;
+  text-align: center;
+}
+
+/* 2. SIMPLE FADE ANIMATION */
+.hero-section,
+.service-item {
+  /* opacity: 0; // Starts hidden */
+
+  &.p-animateonscroll-enter {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    /* opacity: 0; */
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:host ::ng-deep {
+  .fade-in-up {
+    animation: fadeInUp 1s ease-out forwards !important;
+  }
+
+  /* 3. PRIMENG COMPONENT OVERRIDES (Kept consistent with your design) */
+  .p-card {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background: white;
+    height: 100%;
+
+    .p-card-body {
+      padding: 2.5rem !important;
+      text-align: left !important;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .p-card-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
+      color: #1a1a1a;
+      margin: 0;
+    }
+
+    .p-card-subtitle {
+      color: #6b8e23;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .p-card-content {
+      padding: 0;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .p-card-footer {
+      padding: 0;
+      margin-top: auto;
+    }
+  }
+
+  .p-button {
+    width: 100% !important;
+  }
+}
+
+/* 4. HERO SECTION TEXT */
+.hero-section {
+  max-width: 750px;
+  margin: 0 auto 70px;
+
+  .subtitle {
+    color: #6b8e23;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 20px 0;
+    color: #1a1a1a;
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+}
+
+/* 5. GRID LAYOUT */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* 6. IMAGE HANDLING */
+.card-image-wrapper {
+  height: 300px;
+  overflow: hidden; // Re-enabled to allow the zoom effect
+  border-radius: 20px 20px 0 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.2, 1, 0.3, 1);
+  }
+}
+
+.service-item:hover {
+  .card-image-wrapper img {
+    transform: scale(1.1);
+  }
+}
+
+/* 7. RESPONSIVE */
+@media (max-width: 768px) {
+  .wellness-container {
+    padding: 60px 20px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

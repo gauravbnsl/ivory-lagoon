@@ -16,6 +16,12 @@ export const appConfig: ApplicationConfig = {
     providePrimeNG({
       theme: {
         preset: Aura,
+        options: {
+          cssLayer: {
+            name: "primeng",
+            order: "tailwind-base, primeng, tailwind-utilities",
+          },
+        },
       },
     }),
   ],

@@ -1,5 +1,36 @@
-<section id="spa" class="grid">
-  <p-card header="Spa & Wellness">
-    <p>Placeholder spa section</p>
-  </p-card>
+<section class="wellness-container" id="spa">
+  <!-- Header Section -->
+  <div class="hero-section">
+    <span class="subtitle">Rejuvenate Your Soul</span>
+    <h1>Sanctuary in the Wild</h1>
+    <p>
+      Immerse yourself in ancient healing traditions amidst the whispers of the
+      canopy.
+    </p>
+  </div>
+
+  <!-- Services Grid -->
+  <div class="services-grid">
+    <div *ngFor="let service of services; let i = index" class="service-item">
+      <p-card [header]="service.title" [subheader]="service.duration">
+        <ng-template pTemplate="header">
+          <div class="card-image-wrapper">
+            <img [src]="service.image" [alt]="service.title" />
+          </div>
+        </ng-template>
+
+        <p class="service-desc">{{ service.description }}</p>
+
+        <ng-template pTemplate="footer">
+          <p-button
+            label="Book Ritual"
+            icon="pi pi-calendar"
+            severity="secondary"
+            [outlined]="true"
+            styleClass="w-full"
+          ></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
 </section>

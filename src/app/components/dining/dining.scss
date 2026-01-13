@@ -1,1 +1,131 @@
-section#dining { padding: 4rem 2rem; }
+section#dining {
+  padding: 4rem 2rem;
+}
+
+// Variables for consistent jungle theme
+$deep-charcoal: #1a1f1a;
+$moss-green: #a3b18a;
+$text-gray: #a0a0a0;
+$white-pure: #ffffff;
+
+.dining-container {
+  background: $deep-charcoal;
+  color: #e0e0e0;
+  padding: 100px 5%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .section-tag {
+    color: $moss-green;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-family: "Playfair Display", serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    color: $white-pure;
+  }
+
+  .experience-row {
+    display: flex;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.active {
+      border-bottom: 1px solid $moss-green;
+      color: $white-pure;
+      padding-left: 10px; // Subtle shift on active
+    }
+
+    .row-number {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      margin-right: 30px;
+      opacity: 0.4;
+    }
+
+    .row-content {
+      h3 {
+        font-size: 1.6rem;
+        margin: 0 0 12px 0;
+        font-weight: 400;
+      }
+      p {
+        font-size: 0.95rem;
+        color: $text-gray;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .main-image-frame {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 650px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+
+    ::ng-deep .p-image img {
+      height: 650px;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      z-index: 2;
+    }
+  }
+
+  .fade-in-text {
+    animation: textAppear 0.5s ease-out forwards;
+  }
+}
+
+@keyframes textAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .dining-container {
+    .content-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .main-image-frame,
+    ::ng-deep .p-image img {
+      height: 450px;
+    }
+    .title {
+      font-size: 2.8rem;
+    }
+  }
+}
