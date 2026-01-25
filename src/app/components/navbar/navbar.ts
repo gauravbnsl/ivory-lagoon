@@ -15,10 +15,10 @@ import { MenubarModule } from "primeng/menubar";
 })
 export class Navbar implements AfterViewInit, OnDestroy {
   items = [
+    { label: "Spa", command: () => this.scrollTo("spa") },
     { label: "Experiences", command: () => this.scrollTo("experience") },
     { label: "Rooms", command: () => this.scrollTo("rooms") },
     { label: "Dining", command: () => this.scrollTo("dining") },
-    { label: "Spa", command: () => this.scrollTo("spa") },
     { label: "Contact", command: () => this.scrollTo("cta") },
   ];
 

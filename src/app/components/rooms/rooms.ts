@@ -16,14 +16,14 @@ export class Rooms {
   rooms = [
     {
       name: "Jungle View Suite",
-      image: "room1.png", // Ensure this file is in src/assets/images/
+      image: "room1.png",
       description:
         "Wake up to panoramic views of the dense, vibrant canopy from your floor-to-ceiling windows.",
       features: ["King Size Bed", "Private Balcony", "Canopy Views"],
     },
     {
       name: "Jacuzzi Garden Villa",
-      image: "room2.png", // Ensure this file is in src/assets/images/
+      image: "room2.png",
       description:
         "Indulge in our private outdoor Jacuzzi surrounded by lush tropical flora, a true sensory retreat.",
       features: ["Outdoor Jacuzzi", "Rain Shower", "Garden Access"],

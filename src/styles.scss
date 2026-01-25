@@ -1,10 +1,9 @@
 @import "tailwindcss";
 @plugin "tailwindcss-primeui";
-/* global styles.scss */
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
 
-/* Ensure Tailwind and PrimeNG styles are layered correctly */
+
 @layer tailwind-base, primeng, tailwind-utilities;
 
 @layer tailwind-base {
@@ -15,13 +14,14 @@
   @tailwind components;
   @tailwind utilities;
 }
+
 :root {
   --luxury-primary: #7a2e2e;
   --luxury-dark: #1f1f1f;
   --luxury-muted: #6b6b6b;
   --luxury-bg: #faf8f6;
   --luxury-accent: #c9a14a;
-  --navbar-height: 80px; /* height used by the navbar */
+  --navbar-height: 80px;
 }
 
 body {
@@ -52,4 +52,8 @@ h3 {
 
 .p-menubar-end {
   margin-left: auto !important;
+}
+
+.p-menubar-item-content {
+  padding: 8px;
 }

@@ -1,14 +1,13 @@
-/* 1. SECTION CONTAINER */
 .wellness-container {
   padding: 100px 5%;
   background: #fdfdfb;
   text-align: center;
 }
 
-/* 2. SIMPLE FADE ANIMATION */
+
 .hero-section,
 .service-item {
-  /* opacity: 0; // Starts hidden */
+
 
   &.p-animateonscroll-enter {
     opacity: 1;
@@ -17,9 +16,10 @@
 
 @keyframes fadeInUp {
   from {
-    /* opacity: 0; */
+
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -31,7 +31,7 @@
     animation: fadeInUp 1s ease-out forwards !important;
   }
 
-  /* 3. PRIMENG COMPONENT OVERRIDES (Kept consistent with your design) */
+
   .p-card {
     border-radius: 20px;
     border: none;
@@ -79,7 +79,7 @@
   }
 }
 
-/* 4. HERO SECTION TEXT */
+
 .hero-section {
   max-width: 750px;
   margin: 0 auto 70px;
@@ -107,7 +107,7 @@
   }
 }
 
-/* 5. GRID LAYOUT */
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -116,10 +116,10 @@
   margin: 0 auto;
 }
 
-/* 6. IMAGE HANDLING */
+
 .card-image-wrapper {
   height: 300px;
-  overflow: hidden; // Re-enabled to allow the zoom effect
+  overflow: hidden;
   border-radius: 20px 20px 0 0;
 
   img {
@@ -136,11 +136,12 @@
   }
 }
 
-/* 7. RESPONSIVE */
+
 @media (max-width: 768px) {
   .wellness-container {
     padding: 60px 20px;
   }
+
   .services-grid {
     grid-template-columns: 1fr;
   }

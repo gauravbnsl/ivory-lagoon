@@ -1,5 +1,5 @@
 <section class="wellness-container" id="spa">
-  <!-- Header Section -->
+
   <div class="hero-section">
     <span class="subtitle">Rejuvenate Your Soul</span>
     <h1>Sanctuary in the Wild</h1>
@@ -9,7 +9,7 @@
     </p>
   </div>
 
-  <!-- Services Grid -->
+
   <div class="services-grid">
     <div *ngFor="let service of services; let i = index" class="service-item">
       <p-card [header]="service.title" [subheader]="service.duration">
@@ -22,13 +22,8 @@
         <p class="service-desc">{{ service.description }}</p>
 
         <ng-template pTemplate="footer">
-          <p-button
-            label="Book Ritual"
-            icon="pi pi-calendar"
-            severity="secondary"
-            [outlined]="true"
-            styleClass="w-full"
-          ></p-button>
+          <p-button label="Book Ritual" icon="pi pi-calendar" severity="secondary" [outlined]="true"
+            styleClass="w-full"></p-button>
         </ng-template>
       </p-card>
     </div>

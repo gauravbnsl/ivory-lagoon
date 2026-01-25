@@ -1,22 +1,14 @@
 <section class="rooms-container" id="rooms">
-  <div class="section-header" pAnimateOnScroll enterClass="fade-in-up">
+  <div class="section-header">
     <span class="gold-tag">Private Sanctuaries</span>
     <h1>Your Home in the Clouds</h1>
   </div>
 
   <div class="room-grid">
-    <div
-      *ngFor="let room of rooms; let i = index"
-      class="room-item"
-      pAnimateOnScroll
-      enterClass="fade-in-up"
-      [style.animation-delay]="i * 0.15 + 's'"
-      [style.animation-duration]="'1s'"
-    >
+    <div *ngFor="let room of rooms; let i = index" class="room-item">
       <p-card [header]="room.name" [subheader]="room.features.join(', ')">
         <ng-template pTemplate="header">
           <div class="card-image-wrapper">
-            <!-- Using local image paths -->
             <img [src]="[room.image]" [alt]="room.name" />
           </div>
         </ng-template>
@@ -24,13 +16,8 @@
         <p class="room-description">{{ room.description }}</p>
 
         <ng-template pTemplate="footer">
-          <p-button
-            label="View Availability"
-            icon="pi pi-arrow-right"
-            iconPos="right"
-            severity="contrast"
-            styleClass="w-full"
-          ></p-button>
+          <p-button label="View Availability" icon="pi pi-arrow-right" iconPos="right" severity="contrast"
+            styleClass="w-full"></p-button>
         </ng-template>
       </p-card>
     </div>

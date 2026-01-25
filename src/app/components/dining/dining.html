@@ -1,18 +1,14 @@
 <section id="dining" class="grid">
   <section class="dining-container">
     <div class="content-wrapper">
-      <!-- Left Side: Interactive Experience Selection -->
+
       <div class="text-side" pAnimateOnScroll enterClass="fadeInLeft">
         <span class="section-tag">Epicurean Journey</span>
         <h2 class="title">Wild Flavors, <br />Refined Palates</h2>
 
         <div class="experience-list">
-          <div
-            *ngFor="let item of diningOptions"
-            (mouseenter)="onHover(item)"
-            [class.active]="activeOption.id === item.id"
-            class="experience-row"
-          >
+          <div *ngFor="let item of diningOptions" (mouseenter)="onHover(item)"
+            [class.active]="activeOption.id === item.id" class="experience-row">
             <span class="row-number">0{{ item.id }}</span>
             <div class="row-content">
               <h3>{{ item.name }}</h3>
@@ -24,35 +20,19 @@
         </div>
 
         <div class="action-footer">
-          <p-button
-            label="Reserve a Table"
-            icon="pi pi-envelope"
-            styleClass="p-button-rounded p-button-success"
-          >
+          <p-button label="Reserve a Table" icon="pi pi-envelope" styleClass="p-button-rounded p-button-success">
           </p-button>
-          <p-button
-            label="View Menu"
-            icon="pi pi-book"
-            [text]="true"
-            severity="secondary"
-          >
+          <p-button label="View Menu" icon="pi pi-book" [text]="true" severity="secondary">
           </p-button>
         </div>
       </div>
 
-      <!-- Right Side: Dynamic Image Showcase -->
+
       <div class="image-side" pAnimateOnScroll enterClass="fadeInRight">
         <div class="main-image-frame">
-          <p-image
-            [src]="activeOption.image"
-            [alt]="activeOption.name"
-            width="100%"
-            [preview]="true"
-          >
+          <p-image [src]="activeOption.image" [alt]="activeOption.name" width="100%" [preview]="true">
           </p-image>
-          <!-- <div class="image-overlay">
-            <p-tag [value]="activeOption.tag" severity="warn"></p-tag>
-          </div> -->
+
         </div>
       </div>
     </div>
